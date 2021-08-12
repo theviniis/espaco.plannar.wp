@@ -1,0 +1,255 @@
+@media only screen and (max-width: 1600px) {
+  p.endereco {
+    padding-top: 0;
+  }
+}
+@media only screen and (max-width: 1327px) {
+  .header nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .header nav a {
+    grid-column: 2;
+    justify-self: center;
+  }
+  #hamburger-icon {
+    display: block;
+    grid-column: 3;
+    justify-self: flex-end;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--verdeNoventa);
+    height: 100vh;
+    width: 100vw;
+    transform: translateX(100%);
+    z-index: 4;
+  }
+  .menu.is-active a {
+    padding: 8px;
+    color: white;
+  }
+  .menu.is-active li {
+    margin-right: 15px;
+  }
+  .menu-social {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    gap: 1rem;
+  }
+  .menu.is-active .__logo {
+    display: block;
+    padding: 0;
+    filter: grayscale(1) invert(1) brightness(1.7);
+  }
+  .menu.is-active .__logo img {
+    mix-blend-mode: difference;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  :root {
+    --minWidth: 85vw;
+  }
+  .apresentacao {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: "img ctt";
+  }
+  .apresentacao #container {
+    top: 18%;
+    left: -17%;
+  }
+  .apresentacao-passaro {
+    max-width: 60%;
+  }
+  .servicos .custom-arrows {
+    width: var(--minWidth);
+  }
+  .ctt-path {
+    display: none;
+  }
+  .depoimentos .custom-arrows {
+    width: 58%;
+  }
+  .header {
+    justify-content: center;
+  }
+  .investimento {
+    grid-template-columns: 0.6fr 1.4fr 0.1fr;
+  }
+  .investimento .container,
+  .apresentacao #container {
+    display: none;
+  }
+  .contato .endereco {
+    max-width: 25vw;
+  }
+  .contato .logo {
+    display: none;
+  }
+  .modal {
+    min-height: 100%;
+    max-height: 100vh;
+    width: 100%;
+    place-content: center;
+  }
+  .modal ul {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  .formulario button {
+    top: 72%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .logo {
+    transition: 0.3s ease-in-out;
+    max-width: 6rem;
+  }
+  header.sticky .logo:first-child {
+    max-width: 6rem;
+  }
+  .banner_item {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+  .quem-sou-content {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  .quote blockquote {
+    max-width: var(--minWidth);
+  }
+  .depoimentos .custom-arrows {
+    width: 64%;
+  }
+  .investimento {
+    grid-template-columns: 0.3fr 1.7fr;
+  }
+  .apresentacao-img {
+    display: none;
+  }
+  .contato .endereco {
+    max-width: 20vw;
+  }
+  .modal ul {
+    grid-template-columns: 1fr;
+  }
+  .modal li {
+    width: unset;
+  }
+}
+@media only screen and (max-width: 720px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "titulo ..."
+      "nav social"
+      "ctt ctt"
+      "... logo";
+  }
+}
+@media only screen and (max-width: 600px) {
+  a,
+  li,
+  p,
+  blockquote,
+  cite,
+  textarea,
+  button,
+  input,
+  .apresentacao p,
+  .quem-sou p,
+  footer .titulo {
+    --fluid-type-max: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  .servicos li h3 {
+    --fluid-type-max: 1.5rem;
+  }
+  .header nav {
+    align-items: center;
+  }
+  .menu-social,
+  .__logo {
+    justify-content: center;
+    place-self: center;
+  }
+  .banner {
+    margin-top: 18vh;
+  }
+  .quebra {
+    display: none;
+  }
+  .depoimento {
+    max-width: var(--minWidth);
+    margin: 0 auto;
+  }
+  .depoimento p {
+    max-width: calc(var(--minWidth) - 15vw);
+    margin: 0 auto;
+  }
+  .depoimentos .custom-arrows {
+    width: var(--minWidth);
+  }
+  .apresentacao {
+    grid-template-columns: 1fr;
+    width: var(--minWidth);
+  }
+  .apresentacao,
+  .apresentacao p {
+    margin: 0 auto;
+  }
+  .apresentacao-img {
+    display: none;
+  }
+  .apresentacao-conteudo {
+    padding: calc(var(--gap) * 4) 0;
+  }
+  .apresentacao-conteudo h3 {
+    max-width: 100%;
+    margin: 0 auto calc(var(--gap) * 4) auto;
+  }
+  .investimento {
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-areas:
+      "titulo"
+      "subtitulo"
+      "conteudo";
+  }
+  .investimento h3:nth-child(3) {
+    --fluid-type-max: 1.1rem;
+    font-weight: 400;
+  }
+  .servicos p {
+    max-width: calc(var(--minWidth) - 15vw);
+    margin: 0 auto;
+  }
+  .contato {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "contato"
+      "end"
+      "logo";
+    gap: var(--padding);
+    max-width: var(--minWidth);
+    margin: 0 auto;
+  }
+  .contato .endereco {
+    max-width: 64%;
+    padding: 0;
+  }
+  .footer-logo img {
+    max-width: 8rem;
+  }
+}

@@ -1,0 +1,564 @@
+/*
+Theme Name: Espaço Plannar
+Theme URI: http://espaco-plannar.local
+Author: Viniis
+Author URI: https://github.com/theviniis/
+Description: Tema criado para Espaço Plannar
+Version: 1.0
+*/
+
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+}
+.header nav {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) * 2);
+  background-color: var(--bodyColor);
+  transition: 0.3s ease-in-out;
+  padding: calc(var(--gap) * 2) calc((100vw - var(--minWidth)) / 2);
+}
+header.sticky {
+  min-height: 10vh;
+}
+header.sticky .logo:first-child {
+  max-width: 8rem;
+}
+.header .logo {
+  padding-bottom: var(--gap);
+}
+.logo {
+  transition: 0.3s ease-in-out;
+  max-width: 10rem;
+}
+#hamburger-icon {
+  display: none;
+  z-index: 5;
+  color: var(--verdeNoventa);
+  font-size: 2.5rem;
+}
+.menu {
+  position: relative;
+  display: flex;
+  gap: var(--padding);
+  letter-spacing: 2px;
+  justify-content: center;
+  text-transform: lowercase;
+  transition: 0.3s ease-in-out;
+}
+.menu li {
+  width: max-content;
+}
+.menu li a {
+  padding: var(--gap);
+  --fluid-type-max: 1.8rem;
+}
+.menu.is-active {
+  gap: 1rem;
+  transform: translateX(0);
+  padding: var(--minWidthP);
+}
+.menu-social {
+  display: none;
+  width: var(--minWidth);
+}
+.menu-social .icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.menu .__logo {
+  display: none;
+}
+/* --------------- banner ---------------*/
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+/* --------------- quebra ---------------*/
+.quebra {
+  max-width: 100%;
+  margin-top: 8px;
+}
+@-webkit-keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 4583.4912109375px;
+    stroke-dasharray: 4583.4912109375px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4583.4912109375px;
+  }
+}
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 4583.4912109375px;
+    stroke-dasharray: 4583.4912109375px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 4583.4912109375px;
+  }
+}
+.quebra-1 {
+  -webkit-animation: animate-svg-stroke-1 3s cubic-bezier(0.47, 0, 0.745, 0.715)
+    0.1s both;
+  animation: animate-svg-stroke-1 3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s
+    both;
+}
+
+/* --------------- quem sou ---------------*/
+.quem-sou {
+  padding: var(--padding) 0;
+}
+.quem-sou .titulo {
+  margin-bottom: var(--padding);
+}
+
+.quem-sou-content {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  column-gap: calc(var(--gap) * 10);
+  row-gap: 8px;
+  padding: 0 var(--minWidthP);
+}
+.quem-sou p {
+  max-width: 60ch;
+  padding-bottom: 1rem;
+  --fluid-type-max: 1.5rem;
+}
+.quem-sou-img {
+  padding-top: 1rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  max-width: 100%;
+}
+/* --------------- quote ---------------*/
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(var(--gap) * 2);
+  background-color: var(--verdeNoventa);
+  color: white;
+  text-align: center;
+  padding: var(--padding) 0;
+}
+.quote blockquote {
+  max-width: calc(var(--minWidth) / 1.5);
+  font-family: Regalhisa;
+  margin: 0 auto;
+}
+/* --------------- depoimentos ---------------*/
+.depoimentos {
+  padding: var(--padding) 0;
+  background-color: var(--colCinza);
+}
+.depoimentos h3 {
+  margin-bottom: var(--padding);
+}
+.depoimento {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+.depoimento blockquote {
+  text-align: center;
+  color: var(--fontColCinza);
+}
+.depoimento cite {
+  margin-top: calc(var(--gap) * 2);
+  color: var(--verdeNoventa);
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+
+/* --------------- apresentacao ---------------*/
+.apresentacao {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.5fr;
+  grid-template-areas: "img ctt ...";
+  position: relative;
+}
+.apresentacao-img {
+  grid-area: img;
+  background-image: url(img/apresentacao-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.apresentacao-conteudo {
+  grid-area: ctt;
+  padding: var(--padding);
+  place-self: center;
+}
+.apresentacao-conteudo p {
+  max-width: 60ch;
+  --fluid-type-max: 1.5rem;
+}
+.apresentacao-conteudo h3 {
+  margin-bottom: var(--padding);
+}
+.apresentacao #container {
+  grid-area: img;
+  grid-column: 1/3;
+  position: relative;
+  top: 18%;
+  left: -10%;
+}
+.apresentacao-passaro {
+  max-width: 70%;
+}
+img[class*="passaro"] {
+  filter: drop-shadow(5px 3px 9px rgba(0, 0, 0, 0.4));
+}
+html:not(.no-js) [data-aos="slide-right"] {
+  -webkit-transform: translate3d(-15%, 15%, 0);
+  transform: translate3d(-15%, 15%, 0);
+}
+
+/* -------------- Seviços  -------------- */
+.servicos {
+  background-color: var(--colCinza);
+  padding: var(--padding) 0;
+}
+.servicos .titulo {
+  margin-bottom: var(--padding);
+  text-align: center;
+}
+.servicos img {
+  height: 150px;
+}
+.servicos .livro {
+  max-width: 52%;
+}
+.servicos li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--padding);
+}
+.servicos li h3 {
+  --fluid-type-max: 2.1rem;
+  max-width: calc(var(--minWidth) - 15vw);
+}
+.servicos li p {
+  position: relative;
+  overflow-y: hidden;
+}
+.servicos button {
+  justify-self: center;
+  margin: var(--padding) auto 0 auto;
+}
+.servicos-btn {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.instagram_feed {
+  max-width: var(--minWidth);
+  padding: var(--padding);
+  margin: 0 auto;
+}
+.instagram_feed h3 {
+  margin-bottom: var(--padding);
+}
+
+/* -------------- Investimento profissional -------------- */
+.investimento {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr minmax(100px, 0.5fr);
+  grid-auto-rows: min-content;
+  gap: 1rem;
+  align-items: center;
+  justify-items: flex-start;
+  grid-template-areas:
+    "titulo subtitulo ..."
+    "titulo conteudo ...";
+  background-color: var(--verdeNoventa);
+  padding: var(--padding) var(--minWidthP);
+  position: relative;
+}
+.investimento h3,
+.investimento p {
+  text-align: left;
+  color: white;
+  margin: 0;
+}
+.investimento .col-1 {
+  font-weight: bold;
+  font-size: var(--fontSize2);
+}
+.investimento .btn {
+  color: var(--fontColCinza);
+  background-color: white;
+  place-self: flex-start;
+}
+.investimento .col-2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding);
+}
+.investimento .container {
+  position: absolute;
+  right: 4%;
+  top: -24%;
+  z-index: 1;
+}
+.passaro-2 {
+  max-width: 80%;
+}
+html:not(.no-js) [data-aos="slide-left"] {
+  -webkit-transform: translate3d(20%, 20%, 0);
+  transform: translate3d(20%, 20%, 0);
+}
+/* -------------- contato -------------- */
+.contato {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-areas:
+    "... titulo"
+    "end contato"
+    "logo logo";
+  place-items: center;
+  padding: var(--padding) 0;
+  position: relative;
+  overflow: hidden;
+}
+.endereco {
+  color: var(--fontColCinza);
+  align-self: flex-start;
+  padding-top: calc(var(--gap) * 6);
+  max-width: 12vw;
+}
+.formulario div {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr);
+  grid-auto-rows: min-content;
+  grid-template-areas: "form";
+  position: relative;
+}
+.formulario div img {
+  grid-area: form;
+  min-width: 300px;
+  width: 25vw;
+}
+.formulario input,
+.formulario textarea {
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  color: var(--fontColCinza);
+  width: 82%;
+  grid-area: form;
+  position: absolute;
+  left: 7.7%;
+}
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: 0;
+}
+.formulario .nome {
+  position: absolute;
+  top: 43%;
+  height: 40%;
+}
+.formulario .email {
+  position: absolute;
+  top: 21%;
+  height: 60%;
+}
+.formulario .mensagem {
+  position: absolute;
+  top: 12.3%;
+  height: 68%;
+}
+.formulario textarea {
+  z-index: 2;
+  resize: none;
+}
+.formulario button {
+  position: absolute;
+  justify-self: center;
+  top: 78%;
+  z-index: 2;
+  text-transform: lowercase;
+}
+.ctt-path {
+  position: absolute;
+  top: 42%;
+  min-width: 60%;
+}
+.contato .logo {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+/* -------------- whatsapp btn -------------- */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 3%;
+  right: 1%;
+  z-index: 3;
+}
+.whatsapp-btn img {
+  max-width: 12rem;
+}
+/* -------------- footer -------------- */
+footer {
+  display: grid;
+  grid-template-columns: minmax(60px, 0.5fr) minmax(175px, 0.6fr) minmax(
+      300px,
+      1fr
+    );
+  grid-auto-rows: min-content;
+  gap: 2ch;
+  grid-template-areas:
+    "titulo ... ..."
+    "nav social ctt"
+    "... ... logo";
+  background-color: var(--verdeNoventa);
+  color: white;
+  min-height: 30vh;
+  padding: var(--padding) var(--minWidthP);
+}
+footer .titulo {
+  color: white;
+  text-transform: uppercase;
+  font-family: var(--fontP);
+  --fluid-type-max: 1.5rem;
+  grid-area: titulo;
+  justify-self: left;
+  margin: 0;
+}
+footer a {
+  color: white;
+}
+.footer-menu {
+  grid-area: nav;
+}
+.footer-social,
+.footer-ctt {
+  grid-area: social;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.footer-social li a,
+.footer-ctt li,
+.footer-ctt li a {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px;
+}
+.footer-ctt {
+  grid-area: ctt;
+}
+.footer-logo {
+  grid-area: logo;
+  place-self: end;
+}
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* -------------- modal -------------- */
+.modal {
+  position: fixed;
+  top: calc(50% + 10vh);
+  left: 50%;
+  border-radius: 10px;
+  background-color: #fff;
+  display: none;
+  transform: translate(-50%, calc(-50% - 10vh));
+  transition: 1s;
+  padding: var(--padding);
+  z-index: 6;
+}
+.modal.is-active {
+  display: grid;
+  grid-template-areas:
+    "titulo btn"
+    "li li";
+  align-items: center;
+  gap: var(--padding);
+}
+.modal h3 {
+  grid-area: titulo;
+}
+.modal ul {
+  grid-area: li;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--padding);
+}
+.modal li {
+  width: max-content;
+}
+.modal .material-icons {
+  grid-area: btn;
+  justify-self: end;
+  color: var(--verdeNoventa);
+  font-size: 2.2rem;
+  cursor: pointer;
+  display: block;
+  padding: 8px;
+}
+.eapps-instagram-feed-title {
+  padding: 0 !important;
+  padding-bottom: var(--padding) !important;
+}
+
+.instagram_feed a.eapps-link {
+  z-index: 0 !important;
+  display: none !important;
+}
+.modal_bg {
+  display: none;
+  position: relative;
+}
+.modal_bg.is-active {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+}
+
+.modal_agendamento {
+  background: white;
+  max-width: calc(var(--minWidth) - 20vw);
+  padding: calc(var(--padding) * 2) var(--padding) var(--padding) var(--padding);
+  border-radius: 10px;
+  z-index: 999;
+  position: relative;
+}
+.modal_bg .material-icons {
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  color: var(--verdeNoventa);
+  font-size: 2.2rem;
+  cursor: pointer;
+  display: block;
+  padding: 8px;
+}

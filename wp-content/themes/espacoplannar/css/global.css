@@ -1,0 +1,147 @@
+/* Variaveis */
+:root {
+  /* container width */
+  --minWidth: 60vw;
+  --minWidthP: calc((100vw - var(--minWidth)) / 2);
+
+  /* font */
+  --fontFamP: "Calibri", sans-serif;
+  --fontFamT: "Baskervville", serif;
+  --fontColCinza: #707070;
+  --fontSize1: 1.25rem;
+  --fontSize2: 1.8rem;
+  --fontSize3: 2.75rem;
+
+  /* colors */
+  --verdeNoventa: #127e7b;
+  --bodyColor: #f8f8f8;
+  --colCinza: #ececec;
+
+  /* Styles */
+  --gap: 0.5rem;
+  --padding: calc(var(--gap) * 5);
+}
+@font-face {
+  font-family: Regalhisa;
+  src: url(../fonts/regalhisa.ttf);
+}
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+body,
+p,
+h1,
+ul,
+li,
+blockquote {
+  padding: 0;
+  margin: 0;
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 12vh;
+}
+body {
+  background-color: var(--bodyColor);
+  color: var(--fontColCinza);
+  line-height: 1.5;
+  font-family: var(--fontFamP);
+  overflow-x: hidden;
+}
+body:nth-child(2) {
+  margin-top: 15vh;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: var(--verdeNoventa);
+}
+a:hover {
+  opacity: 0.6;
+}
+img {
+  display: block;
+  min-width: 5%;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  color: var(--verdeNoventa);
+  font-family: var(--fontFamT);
+  line-height: 1.1;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+p,
+a,
+blockquote,
+cite,
+li,
+input,
+textarea,
+button {
+  font-size: clamp(
+    var(--fluid-type-min, 1rem),
+    calc(1rem + var(--fluid-type-target, 3vw)),
+    var(--fluid-type-max, 1.3rem)
+  );
+}
+h1 {
+  --fluid-type-min: 2.5rem;
+  --fluid-type-max: 5rem;
+  --fluid-type-target: 5vw;
+}
+h3 {
+  --fluid-type-min: 1.3rem;
+  --fluid-type-max: 2.7rem;
+}
+a,
+li,
+p,
+textarea,
+button,
+input {
+  --fluid-type-max: 1.25rem;
+}
+blockquote,
+cite {
+  --fluid-type-max: 1.8rem;
+}
+cite {
+  font-style: normal;
+}
+
+/* Other stuff */
+.full-bleed {
+  grid-column: 1 / -1;
+}
+.container {
+  max-width: var(--minWidth);
+  margin: 0 auto;
+}
+.btn {
+  border-radius: 30px;
+  background-color: var(--verdeNoventa);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: var(--fontFamP);
+  letter-spacing: 0.1rem;
+  min-width: min-content;
+  outline: 0;
+  padding: 8px 24px;
+  text-transform: uppercase;
+}

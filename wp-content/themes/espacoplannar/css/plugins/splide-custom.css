@@ -1,0 +1,46 @@
+/* --------------- splide banner ---------------*/
+.banner .custom-arrows,
+.servicos .custom-arrows {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95vw;
+  z-index: 2;
+}
+/* --------------- splide depoimentos ---------------*/
+.depoimentos .custom-arrows {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90ch;
+  z-index: 2;
+}
+.depoimentos .splide__slide:not(.is-active) {
+  opacity: 0.4;
+  transform: scale(0.96);
+}
+/* --------------- splide servicos ---------------*/
+.servicos .custom-arrows {
+  left: 50%;
+  position: absolute;
+  top: 33%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--minWidth) + 15vw);
+  z-index: 2;
+}
+
+/* splide */
+.custom-arrows .splide__arrow {
+  background-color: transparent;
+}
+.custom-arrows .splide__arrow svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--verdeNoventa);
+}
+.splide__slide {
+  transition: transform 200ms ease-in;
+  transform: scale(1);
+}
